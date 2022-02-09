@@ -2,29 +2,24 @@ import Head from 'next/head'
 import Link from 'next/link'
 import styles from '../styles/Home.module.css'
 
-export default function Home () {
+export default function Provinces () {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Guía telefónica</title>
-        <meta name="description" content="Guía telefónica" />
+        <title>Provincias | 外省</title>
+        <meta name="description" content="Provincias | 外省" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Guía telefónica
+            Provincias | 外省
         </h1>
         <nav>
           <ul>
             <li>
-              <Link href={'barrios'}>
-                Barrios
-              </Link>
-            </li>
-            <li>
-              <Link href={'provincias'}>
-                Provincias
+              <Link href={'/'}>
+                Volver
               </Link>
             </li>
           </ul>
