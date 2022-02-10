@@ -18,12 +18,12 @@ export default function Home () {
         <nav>
           <ul>
             <li>
-              <Link href={'barrios'}>
+              <Link href={'/barrios'}>
                 Barrios
               </Link>
             </li>
             <li>
-              <Link href={'provincias'}>
+              <Link href={'/provincias'}>
                 Provincias
               </Link>
             </li>

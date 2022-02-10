@@ -38,11 +38,10 @@ export default function Surnames () {
                 <th>Páginas blancas</th>
                 <th>ABC Teléfonos</th>
                 <th>Telexplorer</th>
-                <th>Google Maps</th>
               </tr>
             </thead>
             <tbody>
-              <SurnamesTr />
+              <SurnamesTr neighborhood={selectedNeighborhood} />
             </tbody>
           </table>
         </section>
