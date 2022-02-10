@@ -3,25 +3,25 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
 import SurnamesTr from '../../components/tables/surnamesTr'
-import neighborhoods from '../../database/neighborhoods'
+import provinces from '../../database/provinces'
 import styles from '../../styles/Home.module.css'
 
-export default function Neighborhoods () {
-  const [selectedNeighborhood, setSelectedNeighborhood] = useState('')
+export default function Provinces () {
+  const [selectedProvince, setSelectedProvince] = useState('')
   const router = useRouter()
-  const { neighborhood } = router.query
+  const { province } = router.query
 
   useEffect(() => {
-    const selectedValue = neighborhoods.find(
-      value => value.url === neighborhood
+    const selectedValue = provinces.find(
+      value => value.url === province
     )
-    setSelectedNeighborhood(selectedValue)
-  }, [neighborhood])
+    setSelectedProvince(selectedValue)
+  }, [province])
 
   return (
     <div className={styles.container}>
       <Head>
-        <title>{(selectedNeighborhood && selectedNeighborhood.name) || 'Barrio'} | Apellidos 姓名</title>
+        <title>{(selectedProvince && selectedProvince.name) || 'Provincia'} | Apellidos 姓名</title>
         <meta name="description" content="Guía telefónica | Apellidos 姓名" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -29,11 +29,11 @@ export default function Neighborhoods () {
       <main className={styles.main}>
         <h1 className={styles.title}>
           Guía telefónica
-          {selectedNeighborhood && <span> | {selectedNeighborhood.name}</span>}
+          {selectedProvince && <span> | {selectedProvince.name}</span>}
         </h1>
         <section>
           <nav>
-            <Link href={'/barrios'}>
+            <Link href={'/provincias'}>
               Volver
             </Link>
           </nav>
@@ -46,10 +46,12 @@ export default function Neighborhoods () {
                 <th>Nombre 姓名</th>
                 <th>Páginas blancas</th>
                 <th>ABC Teléfonos</th>
+                <th>Telexplorer</th>
+                <th>Google Maps</th>
               </tr>
             </thead>
             <tbody>
-              {selectedNeighborhood && <SurnamesTr neighborhood={selectedNeighborhood} />}
+              {selectedProvince && <SurnamesTr province={selectedProvince} />}
             </tbody>
           </table>
         </section>

@@ -3,6 +3,9 @@ import Link from 'next/link'
 import styles from '../styles/Home.module.css'
 
 export default function Home () {
+  // TODO: Por tipo de negocio
+  // TODO: Por dirección
+
   return (
     <div className={styles.container}>
       <Head>
