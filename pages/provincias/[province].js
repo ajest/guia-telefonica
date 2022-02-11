@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
-import SurnamesTr from '../../components/tables/surnamesTr'
+import SurnamesTr from '../../components/tables/SurnamesTr'
 import provinces from '../../database/provinces'
 import styles from '../../styles/Home.module.css'
 
