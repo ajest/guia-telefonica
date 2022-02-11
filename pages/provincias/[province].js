@@ -41,7 +41,7 @@ export default function Provinces () {
                   <th>#</th>
                   <th>Nombre 姓名</th>
                   <th>Páginas blancas</th>
-                  <th>ABC Teléfonos</th>
+                  <th>ABC</th>
                   <th>Telexplorer</th>
                   <th>Google Maps</th>
                 </tr>
