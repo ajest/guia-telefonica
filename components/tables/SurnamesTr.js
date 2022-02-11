@@ -23,7 +23,7 @@ export default function SurnamesTr ({ neighborhood, province }) {
 
   const trs = surnames.map((surname, key) =>
     <tr key={key}>
-      <td>#{key + 1}</td>
+      <td><small>{key + 1}</small></td>
       <td>{surname}</td>
       <td>
         <a href={`http://www.paginasblancas.com.ar/persona/s/${surname}/${paginasBlancasZone}`} target="_blank" rel="noreferrer">Link</a>
@@ -45,7 +45,7 @@ export default function SurnamesTr ({ neighborhood, province }) {
           </select>
           <input type="hidden" name="zone" value="namwp" />
           <input type="hidden" name="res" value="0" />
-          <input type="submit" value="Link" />
+          <input className='as-a-link' type="submit" value="Link" />
         </form>
       </td>
       {type === 'province' && <td>

@@ -1,0 +1,28 @@
+.nav {
+    margin: 0;
+    background: #ffd7d7;
+}
+
+.nav .ul {
+    padding: 0.5em;
+}
+
+.nav .ul li {
+    padding: 0 .5em;
+    font-size: 1em;
+}
+
+.nav .ul li + li {
+    margin: 0;
+    border-left: 1px solid #4e4747;
+}
+
+.nav .ul li a {
+    color: #4e4747;
+}
+
+@media (min-width: 80em) {
+    .nav .ul {
+        padding: 0.5em 2.5em;
+    }
+}
