@@ -53,7 +53,9 @@ export default function SurnamesTr ({ neighborhood, province }) {
         </form>
       </td>
       {type === 'province' && <td>
-        <a href={`https://www.google.com.ar/maps/search/${surname},+${province.url}`} target="_blank" rel="noreferrer"><FontAwesomeIcon icon={faSearch} /></a>
+        <a href={`https://www.google.com.ar/maps/search/${surname},+${province.name}`} target="_blank" rel="noreferrer">
+          <FontAwesomeIcon icon={faSearch} />
+        </a>
       </td>}
     </tr>
   )
