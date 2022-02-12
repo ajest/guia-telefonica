@@ -6,7 +6,7 @@ import styles from '../styles/Home.module.css'
 
 export default function Home () {
   // TODO: Por tipo de negocio
-  // TODO: Por dirección
+  // TODO: Por dirección (https://react-select.com/)
 
   return (
     <div className={styles.container}>
