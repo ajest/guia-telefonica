@@ -1,4 +1,4 @@
-import { faGlobeAmericas, faMapLocationDot } from '@fortawesome/free-solid-svg-icons'
+import { faGlobeAmericas, faLocationDot, faMapLocationDot } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Head from 'next/head'
 import Link from 'next/link'
@@ -16,19 +16,28 @@ export default function Home () {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
+        <p>Censo telefónico de locales chinos para Provincias y Barrios de CABA</p>
+        <p>在外省和首都的找新中国人地址的功能</p>
         <nav className={styles.nav}>
           <ul>
             <li>
               <Link href={'/barrios'}>
                 <a>
-                  地区 Barrios <FontAwesomeIcon icon={faMapLocationDot} />
+                  姓 Apellidos (地区 Barrios) <FontAwesomeIcon icon={faMapLocationDot} />
                 </a>
               </Link>
             </li>
             <li>
               <Link href={'/provincias'}>
                 <a>
-                  外省 Provincias <FontAwesomeIcon icon={faGlobeAmericas} />
+                  姓 Apellidos (外省 Provincias) <FontAwesomeIcon icon={faGlobeAmericas} />
+                </a>
+              </Link>
+            </li>
+            <li>
+              <Link href={'/direccion'}>
+                <a>
+                  地址 Dirección <FontAwesomeIcon icon={faLocationDot} />
                 </a>
               </Link>
             </li>

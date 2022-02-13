@@ -11,6 +11,10 @@ a {
   text-decoration: underline;
 }
 
+p {
+  text-align: center;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -57,9 +61,14 @@ table {
   display: block;
 }
 
+table td {
+  font-size: 1.25rem;
+}
+
 table td svg {
   width: 1.2em;
   color: #6ab166;
+  font-size: 1rem;
 }
 
 header {
