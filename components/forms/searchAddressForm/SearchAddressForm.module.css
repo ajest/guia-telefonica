@@ -1,4 +1,9 @@
-.form-container form {
+.form-container {
+    display: flex;
+    justify-content: center;
+}
+
+.form-container .form-group {
     margin: 0 1em;
     display: flex;
     align-items: flex-end;
@@ -6,14 +11,38 @@
     border: 1px solid #bbb;
 }
 
-.form-container form label {
+.form-container .form-group + .form-group {
+    border-top: none;
+}
+
+.form-container .form-group label {
     display: block;
     padding-bottom: .5em;
 }
 
-.form-container form input, .form-container form button {
+.form-container .form-group div {
+    padding: .25em;
+}
+
+.form-container .form-group div.submit-container {
+    width: auto;
+}
+
+.form-container .form-group input.custom-control, .form-container .form-group > div {
+    width: 100%;
+}
+
+.form-container .form-group input.custom-control, .form-container .form-group button.custom-control {
     margin-right: .25em;
-    padding: .5em;
+    padding: 1em 1.2em;
     border-radius: .3em;
-    border: 1px solid #999;
+    background-color: hsl(0, 0%, 100%);
+    border-color: hsl(0, 0%, 80%);
+    border-radius: 4px;
+    border-style: solid;
+    border-width: 1px;
+    min-height: 38px;
+    transition: all 100ms;
+    max-height: 3.25em;
+    color: hsl(0, 0%, 20%);
 }

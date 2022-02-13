@@ -6,7 +6,7 @@ import styles from '../styles/Generic.module.css'
 
 export default function Home () {
   // TODO: Por tipo de negocio
-  // TODO: Por dirección (https://react-select.com/)
+  // TODO: LocalStorage para controlar donde hice click
 
   return (
     <div className={styles.container}>
