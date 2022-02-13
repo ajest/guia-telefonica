@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react'
 import Breadcrumb from '../../components/breadcrumb/Breadcrumb'
 import SurnamesTr from '../../components/tables/SurnamesTr'
 import provinces from '../../database/provinces'
-import styles from '../../styles/Home.module.css'
+import styles from '../../styles/Generic.module.css'
 
 export default function Provinces () {
   const [selectedProvince, setSelectedProvince] = useState('')

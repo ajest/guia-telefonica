@@ -2,7 +2,7 @@ import { faGlobeAmericas, faMapLocationDot } from '@fortawesome/free-solid-svg-i
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Head from 'next/head'
 import Link from 'next/link'
-import styles from '../styles/Home.module.css'
+import styles from '../styles/Generic.module.css'
 
 export default function Home () {
   // TODO: Por tipo de negocio

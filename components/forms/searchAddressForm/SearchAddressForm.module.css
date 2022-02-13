@@ -1,0 +1,19 @@
+.form-container form {
+    margin: 0 1em;
+    display: flex;
+    align-items: flex-end;
+    padding: 2em;
+    border: 1px solid #bbb;
+}
+
+.form-container form label {
+    display: block;
+    padding-bottom: .5em;
+}
+
+.form-container form input, .form-container form button {
+    margin-right: .25em;
+    padding: .5em;
+    border-radius: .3em;
+    border: 1px solid #999;
+}
