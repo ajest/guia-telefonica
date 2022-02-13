@@ -8,18 +8,18 @@ export default function NumbersTableBody ({ address, number, zone }) {
     return null
   }
 
-  const selectedZone = zone ?? 'ciudad-de-buenos-aires'
+  const selectedZone = zone ?? 'capital-federal'
+  const addressHyphenFormatted = address.replace(/\s+/g, '-')
+
   const intNumber = parseInt(number, 10)
   const numbers = [intNumber, intNumber - 2, intNumber + 2, intNumber - 4, intNumber + 4, intNumber - 6, intNumber + 6]
 
   let type = 'generic'
-  let addressHyphenFormatted = ''
   let addressPlusFormatted = ''
 
   const selectedNeighborhood = neighborhoods.find(value => value.url === selectedZone)
   if (selectedNeighborhood) {
     type = 'neighborhood'
-    addressHyphenFormatted = address.replace(/\s+/g, '-')
   }
 
   const selectedProvince = provinces.find(value => value.url === selectedZone)
