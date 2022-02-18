@@ -4,16 +4,21 @@
     flex-direction: column;
 }
 
-.form-container .form-group {
+.form-container .form-group-container {
+    border: 1px solid #ddd;
+    border-radius: 0.25em;
     margin: 0 1em;
+}
+
+.form-container .form-group {
     display: flex;
     align-items: flex-end;
     padding: 2em;
-    border: 1px solid #bbb;
 }
 
 .form-container .form-group + .form-group {
     border-top: none;
+    padding-top: 1em;
 }
 
 .form-container .form-group label {
@@ -26,7 +31,25 @@
 }
 
 .form-container .form-group div.submit-container {
-    width: auto;
+    display: flex;
+    justify-content: right;
+    flex-shrink: 1.5;
+}
+
+@keyframes spin {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
+}
+
+.form-container .form-group div.submit-container svg.spin {
+    animation-name: spin;
+    animation-duration: 1000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
 }
 
 .form-container .form-group input.custom-control, .form-container .form-group > div {
@@ -46,4 +69,8 @@
     transition: all 100ms;
     max-height: 3.25em;
     color: hsl(0, 0%, 20%);
+}
+
+.form-container .form-group button.custom-control {
+    cursor: pointer;
 }

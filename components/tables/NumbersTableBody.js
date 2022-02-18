@@ -1,7 +1,9 @@
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import externalSiteKeys from '../../constants/externalSiteKeys'
 import neighborhoods from '../../database/neighborhoods'
 import provinces from '../../database/provinces'
+import SubmitAsALinkButton from '../forms/buttons/SubmitAsALinkButton'
+import BlankLink from '../links/BlankLink'
 
 export default function NumbersTableBody ({ address, number, zone }) {
   if (!address || !number) {
@@ -36,7 +38,11 @@ export default function NumbersTableBody ({ address, number, zone }) {
     return <tr key={key}>
       {key === 0 ? <td><strong>{number}</strong></td> : <td>{number}</td>}
       <td>
-        <a href={`http://www.paginasblancas.com.ar/direccion/s/${addressHyphenFormatted}-${number}/${selectedZone}`} target="_blank" rel="noreferrer"><FontAwesomeIcon icon={faSearch} /></a>
+        <BlankLink
+          href={`http://www.paginasblancas.com.ar/direccion/s/${addressHyphenFormatted}-${number}/${selectedZone}`}
+          icon={faSearch}
+          storeKey={`${type}-${addressHyphenFormatted}-${number}-${zone}-${externalSiteKeys['paginas-blancas']}`}
+        />
       </td>
       <td>
         <form action="https://www.telexplorer.com.ar/abogados" method="post" target='_blank'>
@@ -53,27 +59,29 @@ export default function NumbersTableBody ({ address, number, zone }) {
           <input type="hidden" name="selectedZone" value="dc" />
           <input type="hidden" name="res" value="0" />
           <input type="hidden" name="Submi" value="BUSCAR" />
-          <button className='as-a-link' type="submit" value="点击">
-            <FontAwesomeIcon icon={faSearch} />
-          </button>
+          <SubmitAsALinkButton
+            icon={faSearch}
+            storeKey={`${type}-${addressHyphenFormatted}-${number}-${zone}-${externalSiteKeys.telexplorer}`}
+          />
         </form>
       </td>
       {type === 'province' && <>
         <td>
-          <a
-          href={`https://www.abctelefonos.com/search?q=${addressPlusFormatted}+${number}&l=${selectedZone}%2C+Argentina&t=direccion&country=argentina`}
-          target="_blank" rel="noreferrer">
-            <FontAwesomeIcon icon={faSearch} />
-          </a>
+          <BlankLink
+            href={`https://www.abctelefonos.com/search?q=${addressPlusFormatted}+${number}&l=${selectedZone}%2C+Argentina&t=direccion&country=argentina`}
+            icon={faSearch}
+            storeKey={`${type}-${addressHyphenFormatted}-${number}-${zone}-${externalSiteKeys['abc-telefonos']}`}
+          />
         </td><td>
-          <a href={`https://www.google.com.ar/maps/place/${addressPlusFormatted}+${number},+${selectedZone}/`} target="_blank" rel="noreferrer">
-            <FontAwesomeIcon icon={faSearch} />
-          </a>
+          <BlankLink
+            href={`https://www.google.com.ar/maps/place/${addressPlusFormatted}+${number},+${selectedZone}`}
+            icon={faSearch}
+            storeKey={`${type}-${addressHyphenFormatted}-${number}-${zone}-${externalSiteKeys['google-maps']}`}
+          />
         </td>
       </>}
     </tr>
-  }
-  )
+  })
 
   return <>
     <thead>

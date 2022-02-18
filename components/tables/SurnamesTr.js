@@ -1,8 +1,10 @@
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import externalSiteKeys from '../../constants/externalSiteKeys'
 import neighborhoods from '../../database/neighborhoods'
 import provinces from '../../database/provinces'
 import surnames from '../../database/surnames'
+import SubmitAsALinkButton from '../forms/buttons/SubmitAsALinkButton'
+import BlankLink from '../links/BlankLink'
 
 export default function SurnamesTr ({ neighborhood, province }) {
   let type = 'generic'
@@ -28,10 +30,18 @@ export default function SurnamesTr ({ neighborhood, province }) {
       <td><small>{key + 1}</small></td>
       <td>{surname}</td>
       <td>
-        <a href={`http://www.paginasblancas.com.ar/persona/s/${surname}/${paginasBlancasZone}`} target="_blank" rel="noreferrer"><FontAwesomeIcon icon={faSearch} /></a>
+        <BlankLink
+          href={`http://www.paginasblancas.com.ar/persona/s/${surname}/${paginasBlancasZone}`}
+          icon={faSearch}
+          storeKey={`${type}-${surname}-${externalSiteKeys['paginas-blancas']}`}
+        />
       </td>
       {type === 'province' && <td>
-        <a href={`https://www.abctelefonos.com/search?q=${surname}&l=${abcTelefonosZone}%2C+Argentina&t=persona&country=argentina`} target="_blank" rel="noreferrer"><FontAwesomeIcon icon={faSearch} /></a>
+        <BlankLink
+          href={`https://www.abctelefonos.com/search?q=${surname}&l=${abcTelefonosZone}%2C+Argentina&t=persona&country=argentina`}
+          icon={faSearch}
+          storeKey={`${type}-${surname}-${externalSiteKeys.telexplorer}`}
+        />
       </td>}
       <td>
         <form action="https://www.telexplorer.com.ar/abogados" method="post" target='_blank'>
@@ -47,15 +57,18 @@ export default function SurnamesTr ({ neighborhood, province }) {
           </select>
           <input type="hidden" name="zone" value="namwp" />
           <input type="hidden" name="res" value="0" />
-          <button className='as-a-link' type="submit" value="点击">
-            <FontAwesomeIcon icon={faSearch} />
-          </button>
+          <SubmitAsALinkButton
+            icon={faSearch}
+            storeKey={`${type}-${surname}-${externalSiteKeys['google-maps']}`}
+          />
         </form>
       </td>
       {type === 'province' && <td>
-        <a href={`https://www.google.com.ar/maps/search/${surname},+${province.name}`} target="_blank" rel="noreferrer">
-          <FontAwesomeIcon icon={faSearch} />
-        </a>
+        <BlankLink
+          href={`https://www.google.com.ar/maps/search/${surname},+${province.name}`}
+          icon={faSearch}
+          storeKey={`${type}-${surname}-${externalSiteKeys['google-maps']}`}
+        />
       </td>}
     </tr>
   )
