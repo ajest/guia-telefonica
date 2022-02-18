@@ -40,7 +40,7 @@ export default function SurnamesTr ({ neighborhood, province }) {
         <BlankLink
           href={`https://www.abctelefonos.com/search?q=${surname}&l=${abcTelefonosZone}%2C+Argentina&t=persona&country=argentina`}
           icon={faSearch}
-          storeKey={`${type}-${surname}-${externalSiteKeys.telexplorer}`}
+          storeKey={`${type}-${surname}-${externalSiteKeys['abc-telefonos']}`}
         />
       </td>}
       <td>
@@ -59,7 +59,7 @@ export default function SurnamesTr ({ neighborhood, province }) {
           <input type="hidden" name="res" value="0" />
           <SubmitAsALinkButton
             icon={faSearch}
-            storeKey={`${type}-${surname}-${externalSiteKeys['google-maps']}`}
+            storeKey={`${type}-${surname}-${externalSiteKeys.telexplorer}`}
           />
         </form>
       </td>
