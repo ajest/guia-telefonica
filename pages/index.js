@@ -6,7 +6,6 @@ import styles from '../styles/Generic.module.css'
 
 export default function Home () {
   // TODO: Por tipo de negocio
-  // TODO: LocalStorage para controlar donde hice click
 
   return (
     <div className={styles.container}>
