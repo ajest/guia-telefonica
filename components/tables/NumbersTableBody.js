@@ -49,6 +49,11 @@ export default function NumbersTableBody ({ address, number, zone }) {
           <input type="hidden" id="calle2" name="calle" value={address} />
           <input type="hidden" id="altura" name="puerta" value={number} />
           <select className={'d-none'} id="provincia1" name="provincia">
+            {<option defaultValue value={12}>
+              CABA
+            </option>}
+          </select>
+          <select className={'d-none'} name="locafield" id="localidad">
             {selectedNeighborhood && <option defaultValue value={selectedNeighborhood.telexplorerId}>
               {selectedNeighborhood.name}
             </option>}
@@ -56,7 +61,7 @@ export default function NumbersTableBody ({ address, number, zone }) {
               {selectedProvince.name}
             </option>}
           </select>
-          <input type="hidden" name="selectedZone" value="dc" />
+          <input type="hidden" name="zone" value="dc" />
           <input type="hidden" name="res" value="0" />
           <input type="hidden" name="Submi" value="BUSCAR" />
           <SubmitAsALinkButton
